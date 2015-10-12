@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Florist One - REST API - ShoppingCart - POST</title>
+<title>Florist One - REST API - ShoppingCart - PUT</title>
 </head>
 <body>
 <?php
