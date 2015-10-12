@@ -60,42 +60,6 @@
 	
 	</cfif>
 	
-	
-	
-	<!---<cfoutput>
-		<cfloop array="#productinfo.products#" index="item">
-			<div style="float: left; margin: 10px; width: 250px; height: 450px; position: relative; border: 1px solid black; padding: 10px;">
-				<table align="center">
-					<tr>
-						<td><img src="#item.small#" /></td>
-					</tr>
-					<tr>
-						<td>#item.code#</td>
-					</tr>
-					<tr>
-						<td>#dollarformat(item.price)#</td>
-					</tr>
-					<tr>
-						<td>#item.name#</td>
-					</tr>
-					<tr>
-						<td>#left(item.description,200)# &hellip;</td>
-					</tr>
-					<tr>
-						<td>
-							<select name="" id="">
-								<option value="">Available Delivery Dates</option>
-								<cfloop array="#item.availabledeliverydates#" index="dates">
-									<option value="#dates.date#">#dates.date# #dollarformat(dates.shippingprice)# (#dates.shippingtype#)</option>
-								</cfloop>
-							</select>
-						</td>
-					</tr>
-				</table>
-			</div>
-		</cfloop>
-	</cfoutput>--->
-	
 	<cfcatch type="any">
 		<cfdump var="#cfcatch#">
 		<!---error loading products--->
