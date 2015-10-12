@@ -1,4 +1,4 @@
-<!---Create Cart<br />
+Create Cart<br />
 <!--- POST --->
 <!--- creates a new cart --->
 <cfhttp url="#application.sitessl#/api/rest/shoppingcart" method="post">
@@ -10,12 +10,6 @@
 Add One Item <br />
 <!--- PUT --->
 <!--- add item to cart --->
-<!---
-<cfset product = StructNew()>
-<cfset product.code = 'F1-509'>
-<cfset product.price = 39.95>
-<cfset product = serializejson(product)>
---->
 <cfset product = 'F1-509'>
 <cfhttp url="#application.sitessl#/api/rest/shoppingcart?sessionid=#cartname#&productcode=#product#&action=add" method="put">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
@@ -31,12 +25,6 @@ Get Cart <br />
 Remove Item<br />
 <!--- PUT --->
 <!--- remove item from cart --->
-<!---
-<cfset product = StructNew()>
-<cfset product.code = 'F1-509'>
-<cfset product.price = 39.95>
-<cfset product = serializejson(product)>
---->
 <cfset product = 'F1-509'>
 <cfhttp url="#application.sitessl#/api/rest/shoppingcart?sessionid=#cartname#&productcode=#product#&action=remove" method="put">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
@@ -52,12 +40,6 @@ Get Cart <br />
 Add One Item<br />
 <!--- PUT --->
 <!--- add item to cart --->
-<!---
-<cfset product = StructNew()>
-<cfset product.code = 'F1-509'>
-<cfset product.price = 39.95>
-<cfset product = serializejson(product)>
---->
 <cfset product = 'F1-509'>
 <cfhttp url="#application.sitessl#/api/rest/shoppingcart?sessionid=#cartname#&productcode=#product#&action=add" method="put">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
@@ -90,7 +72,7 @@ Destroy Cart <br />
 <cfhttp url="#application.sitessl#/api/rest/shoppingcart?sessionid=#cartname#" method="delete">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
 </cfhttp>
-<cfdump var="#deserializeJSON(cfhttp.filecontent.toString())#">--->
+<cfdump var="#deserializeJSON(cfhttp.filecontent.toString())#">
 
 
 <cfoutput>#toBase64('234567:bcde')#</cfoutput>
