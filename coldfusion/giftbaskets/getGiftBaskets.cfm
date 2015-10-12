@@ -17,7 +17,7 @@
 		</cfif>
 	</cfif>
 	
-	<cfhttp url="#application.sitessl#/api/rest/giftbaskets/getproducts?#resturl#" method="get" result="getGB">
+	<cfhttp url="https://www.floristone.com/api/rest/giftbaskets/getproducts?#resturl#" method="get" result="getGB">
 		<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
 	</cfhttp>
 	<cfset productinfo = deserializeJSON(getGB.filecontent.toString())>

@@ -2,7 +2,7 @@
 
 <cftry>
 	<cfset resturl = 'code=' & 'WGX673'>
-	<cfhttp url="#application.sitessl#/api/rest/giftbaskets/getproducts?#resturl#" method="get" result="getGB">
+	<cfhttp url="https://www.floristone.com/api/rest/giftbaskets/getproducts?#resturl#" method="get" result="getGB">
 		<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
 	</cfhttp>
 	<cfset productinfo = deserializeJSON(getGB.filecontent.toString())>
@@ -197,7 +197,7 @@
 	
 	<cfif isdefined("form.submitform")>
 		<!---<cfset resturl = 'products=[{ "code":"' & trim(form.code) & '", "deliverydate":"' & trim(deldate) & '", "rpa":' & val(form.rpa) & ' }]'>
-		<cfhttp url="#application.sitessl#/api/rest/giftbaskets/getgiftbasketstotal?#resturl#" method="get" result="getTotal">
+		<cfhttp url="https://www.floristone.com/api/rest/giftbaskets/getgiftbasketstotal?#resturl#" method="get" result="getTotal">
 			<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
 		</cfhttp>
 		<cfset info = deserializeJSON(getTotal.filecontent.toString())>
@@ -248,7 +248,7 @@
 		<cfset arrayappend(products, product)>
 		<cfset products = serializejson(products)>
 		
-		<cfhttp url="#application.sitessl#/api/rest/giftbaskets/placeorder" method="post">
+		<cfhttp url="https://www.floristone.com/api/rest/giftbaskets/placeorder" method="post">
 			<cfhttpparam type="header" name="Authorization" value="Basic #toBase64('123456:abcd')#">
 			<cfhttpparam type="formfield" name="customer" value='#customer#'>
 			<cfhttpparam type="formfield" name="products" value='#products#'>
