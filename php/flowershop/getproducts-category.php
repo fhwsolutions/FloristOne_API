@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Florist One - REST API - GiftBaskets/getProducts - get multiple products</title>
+<title>Florist One - REST API - Flowershop/getProducts - get multiple products</title>
 </head>
 <body>
 <?php
