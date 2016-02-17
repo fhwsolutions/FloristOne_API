@@ -43,11 +43,9 @@
 <cfset ccinfo.expyear = 16>
 <cfset ccinfo = serializejson(ccinfo)>
 
-<cfset allowsubstitutions = 1>
-
 <cfhttp url="#application.sitessl#/api/rest/flowershop/placeorder" method="post">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64(apikey & ':' & apipassword)#">
-    <cfhttpparam type="formfield" name="customer" value='#customer#'>
+	<cfhttpparam type="formfield" name="customer" value='#customer#'>
 	<cfhttpparam type="formfield" name="products" value='#products#'>
 	<cfhttpparam type="formfield" name="ccinfo" value='#ccinfo#'>
     <cfhttpparam type="formfield" name="ordertotal" value='52.94'>
