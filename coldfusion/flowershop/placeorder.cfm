@@ -10,7 +10,7 @@
 <cfset customer.state = 'DE'>
 <cfset customer.country = 'US'>
 <cfset customer.phone = '1234567890'>
-<cfset customer.zipcode = '11779'>
+<cfset customer.zipcode = '19801'>
 <cfset customer.ip = cgi.REMOTE_HOST>
 <cfset customer = serializejson(customer)>
 
@@ -43,12 +43,12 @@
 <cfset ccinfo.expyear = 16>
 <cfset ccinfo = serializejson(ccinfo)>
 
-<cfhttp url="#application.sitessl#/api/rest/flowershop/placeorder" method="post">
+<cfhttp url="https://www.floristone.com/api/rest/flowershop/placeorder" method="post">
 	<cfhttpparam type="header" name="Authorization" value="Basic #toBase64(apikey & ':' & apipassword)#">
 	<cfhttpparam type="formfield" name="customer" value='#customer#'>
 	<cfhttpparam type="formfield" name="products" value='#products#'>
 	<cfhttpparam type="formfield" name="ccinfo" value='#ccinfo#'>
-    <cfhttpparam type="formfield" name="ordertotal" value='52.94'>
+	<cfhttpparam type="formfield" name="ordertotal" value='52.94'>
 </cfhttp>
 
 <cfdump var="#cfhttp.FileContent.toString()#">
