@@ -3,7 +3,7 @@ $ch = curl_init();
 $username = '123456';
 $password = 'abcd';
 $auth = base64_encode("{$username}:{$password}");
-$zipcode = 11779;
+
 $products = 
 	array(
 		array(
