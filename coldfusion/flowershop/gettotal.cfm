@@ -8,7 +8,7 @@
 <cfset products = ArrayNew(1)>
 <cfset arrayappend(products, product)>
 <cfset products = serializejson(products)>
-<cfhttp url="#application.sitessl#/api/rest/flowershop/gettotal?products=#products#&affiliateservicecharge=0&masterservicecharge=0" method="get">
+<cfhttp url="https://www.floristone.com/api/rest/flowershop/gettotal?products=#products#&affiliateservicecharge=0&masterservicecharge=0" method="get">
   <cfhttpparam type="header" name="Authorization" value="Basic #toBase64(apikey & ':' & apipassword)#">
 </cfhttp>
 <cfdump var="#cfhttp.FileContent.toString()#">
