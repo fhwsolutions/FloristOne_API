@@ -1,4 +1,4 @@
-# FloristOne_API
+# Florist One API
 REST API documentation and sample code
 
 Documentation in Wiki section https://github.com/FloristOne/FloristOne_API/wiki
