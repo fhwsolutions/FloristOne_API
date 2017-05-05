@@ -48,7 +48,7 @@ $products = json_encode(
 	)
 );
 
-$ordertotal = 52.94;
+$ordertotal = 54.94;
 
 $data = array('products' => $products, 'customer' => $customer, 'ccinfo' => $ccinfo, 'ordertotal' => $ordertotal);
 print_r(json_encode($data));
